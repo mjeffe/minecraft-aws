@@ -1,0 +1,36 @@
+[
+    { "ParameterKey": "ECSAMI", "ParameterValue": "" },
+    { "ParameterKey": "ServerState", "ParameterValue": "Stopped" },
+    { "ParameterKey": "InstanceType", "ParameterValue": "t3.medium" },
+    { "ParameterKey": "SpotPrice", "ParameterValue": "0.05" },
+
+    { "ParameterKey": "Timezone", "ParameterValue": "America/Chicago" },
+    { "ParameterKey": "EntryPoint", "ParameterValue": "" },
+    { "ParameterKey": "Command", "ParameterValue": "" },
+
+    { "ParameterKey": "MinecraftImageTag", "ParameterValue": "" },
+    { "ParameterKey": "MinecraftTypeTag", "ParameterValue": "" },
+    { "ParameterKey": "MinecraftVersion", "ParameterValue": "" },
+    { "ParameterKey": "Seed", "ParameterValue": "" },
+    { "ParameterKey": "AdminPlayerNames", "ParameterValue": "mjeffe" },
+    { "ParameterKey": "Difficulty", "ParameterValue": "normal" },
+    { "ParameterKey": "Whitelist", "ParameterValue": "mjeffe,mamajeffe" },
+    { "ParameterKey": "Memory", "ParameterValue": "" },
+    { "ParameterKey": "MaxPlayers", "ParameterValue": "" },
+    { "ParameterKey": "ViewDistance", "ParameterValue": "" },
+    { "ParameterKey": "GameMode", "ParameterValue": "" },
+    { "ParameterKey": "LevelType", "ParameterValue": "DEFAULT" },
+
+    { "ParameterKey": "EnableRollingLogs", "ParameterValue": "true" },
+    { "ParameterKey": "LogGroupName", "ParameterValue": "" },
+    { "ParameterKey": "LogGroupRetentionInDays", "ParameterValue": "" },
+    { "ParameterKey": "LogStreamPrefix", "ParameterValue": "" },
+
+    { "ParameterKey": "ContainerInsights", "ParameterValue": "" },
+    { "ParameterKey": "HostedZoneId", "ParameterValue": "" },
+
+    { "ParameterKey": "KeyPairName", "ParameterValue": "gato-feo-mjeffe" },
+    { "ParameterKey": "YourIPv4", "ParameterValue": "24.144.38.30" },
+    { "ParameterKey": "YourIPv6", "ParameterValue": "" }
+]
+

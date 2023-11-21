@@ -1,0 +1,68 @@
+#!/bin/bash
+
+THIS=$(basename $0)
+cmd="$1"
+
+CFN_STACK_NAME=minecraft-stack
+#CFN_TEMPLATE=file://cfn/mc.yml
+CFN_TEMPLATE=./cfn/mc.yml
+CFN_PARAMETERS=./cfn/mc.parameters
+CFN_EXTRAS="--capabilities CAPABILITY_IAM"
+
+#AWS_CMD="aws cloudformation update-stack --stack-name $CFN_STACK_NAME --template-body $CFN_TEMPLATE $CFN_EXTRAS"
+AWS_CMD="aws --profile gato-feo cloudformation"
+
+
+aws cloudformation create-change-set \
+    --stack-name arn:aws:cloudformation:us-east-1:123456789012:stack/SampleStack/1a2345b6-0000-00a0-a123-00abc0abc000
+    --change-set-name SampleChangeSet \
+    --use-previous-template \
+    --parameters ParameterKey="InstanceType",UsePreviousValue=true ParameterKey="KeyPairName",UsePreviousValue=true ParameterKey="Purpose",ParameterValue="production"
+
+# ---------------------------------------------------------------------------
+mc_start() {
+    echo starting...
+    $AWS_CMD update-stack \
+       --stack-name $CFN_STACK_NAME \
+       --template-body file://${CFN_TEMPLATE} \
+       --parameters file://${CFN_PARAMETERS} \
+       $CFN_EXTRAS
+}
+
+# ---------------------------------------------------------------------------
+mc_stop() {
+    echo stopping...
+    $AWS_CMD update-stack \
+       --stack-name $CFN_STACK_NAME \
+       --template-body file://${CFN_TEMPLATE} \
+       --parameters file://${CFN_PARAMETERS} \
+       $CFN_EXTRAS
+
+       #--parameters "ParameterKey=ServerState,ParameterValue=Stopped" \
+}
+
+# ---------------------------------------------------------------------------
+mc_status() {
+    echo status...
+    $AWS_CMD describe-stacks --stack-name $CFN_STACK_NAME | grep StackStatus
+}
+
+# ---------------------------------------------------------------------------
+case $cmd in
+    start)
+        mc_start
+        ;;
+    stop)
+        mc_stop
+        ;;
+    status)
+        mc_status
+        ;;
+    help)
+        echo "$THIS [start|stop|status|help]"
+        exit 0
+        ;;
+    *) echo "invalid option... try running $THIS help"; ;;
+esac
+
+

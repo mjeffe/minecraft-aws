@@ -1,0 +1,21 @@
+[
+    { "ParameterKey": "ServerState", "ParameterValue": "Stopped" },
+    { "ParameterKey": "InstanceType", "ParameterValue": "t3.medium" },
+    { "ParameterKey": "SpotPrice", "ParameterValue": "0.05" },
+
+    { "ParameterKey": "Timezone", "ParameterValue": "America/Chicago" },
+
+    { "ParameterKey": "AdminPlayerNames", "ParameterValue": "mjeffe" },
+    { "ParameterKey": "Whitelist", "ParameterValue": "mjeffe,mamajeffe" },
+
+    { "ParameterKey": "EnableRollingLogs", "ParameterValue": "true" },
+
+    { "ParameterKey": "KeyPairName", "ParameterValue": "gato-feo-mjeffe" },
+    { "ParameterKey": "YourIPv4", "ParameterValue": "24.144.38.30" },
+
+    { "ParameterKey": "EntryPoint", "ParameterValue": "" },
+    { "ParameterKey": "MinecraftTypeTag", "ParameterValue": "" },
+    { "ParameterKey": "Command", "ParameterValue": "" },
+    { "ParameterKey": "Seed", "ParameterValue": "" }
+]
+
